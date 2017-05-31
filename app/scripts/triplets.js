@@ -93,14 +93,15 @@ var Chart = {
     // function to make grid lines
     function make_y_gridlines(){
       return d3.axisLeft(that.yScale)
-        .ticks(8);
+        .ticks();
     }
 
     this.plot.append("g")
       .attr("class", "grid")
       .call(make_y_gridlines()
           .tickSize(-this.width)
-          .tickFormat(""));
+          .tickFormat("")
+      );
   },
   // make the svg
   drawPlot: function() {
@@ -134,7 +135,7 @@ var Chart = {
       .datum(births)
       .attr("fill", "none")
       .attr("stroke-linecap", "round")
-      .style('stroke', "orange")
+      //.style('stroke', "orange")
       .attr("class", "line")
       .attr("d", line);
   },
