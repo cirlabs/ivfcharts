@@ -1,0 +1,101 @@
+// site-wide variables
+$rv-serif: "ff-meta-serif-web-pro", Georgia, serif;
+$small: "proxima-nova-condensed", sans-serif;
+$rv-sans: 'Lato', Helvetica, sans-serif;
+
+// colors
+$link-color: #f38c21; // ochre
+$rv-link: #f38c21; // ochre
+$reddish: #b71234;
+$rv-red-orange: #fc4e2a;
+$rv-pink: #c92f41;
+$rv-purple: #7b66a0;
+$rv-orange: #db7c24;
+$rv-med-gray: #97857b;
+$rv-light-orange: #e0b028;
+$rv-blue: #5187c9;
+$rv-green: #549d5e;
+
+// grays
+$rv-light-gray: #888;
+$rv-light-grey: $rv-light-gray;
+$rv-dark-gray: #444;
+$rv-dark-grey: $rv-dark-gray;
+$rv-gray: #666;
+
+
+$rv-black: #222;
+$rv-off-white: #EEEEEE;
+$off-white: $rv-off-white;
+$rv-nova: "proxima-nova-condensed", sans-serif;
+$rv-rule: rgb(218, 218, 218);
+
+
+// sizes
+$rv-small: 750px;
+$rv-very-small: 500px;
+$rv-article-width: 675px;
+
+.chart {
+
+   width: 675px;
+
+  .yaxis line {
+    stroke: $rv-gray;
+  }
+
+  .yaxis path {
+    stroke: $rv-gray;
+  }
+  
+  text {
+    font-size: 18px;
+  font-family: $rv-sans;
+
+  }
+
+  .tick text {
+    font-size: 16px;
+    font-family: $rv-sans;
+  }
+
+  
+  .grid line {
+    stroke: $rv-light-gray;
+    stroke-width: 0.5px;
+    fill: none;
+  }
+
+  .line {
+    stroke-width: 3px;
+
+  }
+
+}
+
+#triplets {
+  .line  {
+    stroke: $reddish;
+  }
+ 
+}
+
+
+/////// uncomment if using bootstrap
+// @import "bootstrap";
+@import "base";
+@import "header";
+@import "menu";
+@import "share";
+@import "graphic";
+
+// very small screens
+@media only screen and (max-width: $rv-very-small) { 
+
+} 
+
+// most small screens
+@media only screen and (min-width: $rv-small){ 
+
+} 
+

@@ -1,0 +1,93 @@
+// background fgor whole page when modal is open
+#rv-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0,0,0);
+    /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+    /* Black w/ opacity */
+}
+
+.modal-header {
+  background-color: $rv-black;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
+  font-family: $rv-sans;
+
+  h4 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 2em;
+  }
+}
+
+.close {
+  color: white;
+  float: right;
+  font-size: 3em;
+  font-weight: bold;
+  padding: 0;
+  margin-top: -15px;
+  margin-right: 2px;
+  line-height: 1em;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    width: 60%;
+    padding-bottom: 20px;
+}
+
+#share-icons {
+    margin: 0 auto;
+    max-width: 21em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+    .fa {
+        font-size: 4em;
+        padding: 0.2em 0.4em;
+    }
+
+    .fa-facebook-square {
+        color: #3b5998;
+
+        &:hover {
+            color: darken(#3b5998, 10%);
+        }
+    }
+
+    .fa-twitter-square {
+        color: #4099ff;
+
+        &:hover {
+            color: darken(#4099ff, 10%);
+        }
+    }
+
+    .fa-envelope {
+        color: #f47d31;
+
+        &:hover {
+            color: darken(#f47d31, 10%);
+        }
+    }
+}

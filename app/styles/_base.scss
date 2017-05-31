@@ -1,0 +1,223 @@
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-size: 16px;
+  color: $rv-black;
+  padding: 0;
+  margin: 0;
+  font-family: $rv-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  position: relative;
+  cursor: default;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+////// ARTICLE STYLES //////
+// byline and subhead
+#rv-title {
+  font-size: 16px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+
+  h1 {
+    font-size: 3.8em;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  @media screen and (max-width: $rv-small) {
+    h1 {
+      font-size: 3em;
+    }
+  } // for an optional subhead just below the title
+  h2 {
+    display: block;
+    font-weight: normal;
+    color: $rv-gray;
+    text-align: center;
+    font-size: 1.8em;
+    line-height: 1.3em;
+    padding: 0 2em;
+
+    @media screen and (max-width: $rv-small) {
+      font-size: 1.4em;
+      line-height: auto;
+      padding: 0 0.2em;
+    }
+  }
+}
+
+
+.rv-subhead {
+  max-width: $rv-article-width;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  text-align: left;
+  padding: 0px 10px;
+
+  h3 {
+    display: block;
+    font-weight: normal;
+    color: $rv-light-gray;
+    font-size: 1.4em;
+    @media screen and (max-width: $rv-small) {
+      font-size: 1.2em;
+    }
+  }
+}
+
+
+.rv-byline {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  font-style: italic;
+  color: $rv-light-gray;
+
+  a {
+    @extend a.rv-link;
+  }
+}
+
+p.rv-article-text {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $rv-article-width;
+  font-size: 1.3em;
+  line-height: 1.4em;
+  margin-bottom: 1.25em;
+  font-family: $rv-serif;
+}
+
+a.rv-link {
+  color: $link-color;
+  text-decoration: none;
+  &:hover {
+    color: darken($link-color, 10%);
+  }
+}
+
+// article body 
+.rv-article-body {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+  max-width: $rv-article-width;
+
+  p {
+    @extend p.rv-article-text;
+  }
+
+  a {
+    @extend a.rv-link;
+  }
+}
+
+
+//special components
+footer {
+  display: block;
+  margin-top: 1em;
+}
+
+// caption for photos and media
+figcaption {
+  font-size: 0.9em;
+  line-height: 1.3em;
+  font-style: italic;
+  margin-top: 0.5em;
+  color: rgb(102, 102, 102);
+  padding: 0 10px;
+}
+
+
+//credit line for captions, not for stories
+p.rv-credit {
+  max-width: 100%;
+  margin: 10px 0;
+  color: $rv-light-gray;
+  font-family: $rv-sans;
+  text-align: left;
+  margin-top: 0.8em;
+
+  @media screen and (max-width: $rv-small){
+    text-align: left;
+  }
+}
+
+// links for topic pages
+p.rv-topics {
+  font-size: 1em;
+  font-style: italic;
+  color: $rv-light-gray;
+  margin-top: 2em;
+  padding-bottom: 1em;
+  border-bottom: 0.5px solid $rv-light-gray;
+
+  a {
+    color: $rv-dark-gray;
+    text-decoration: none;
+  }
+}
+
+
+// inline images that break up text
+section.rv-image-inline {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+  font-size: 16px;
+
+  img {
+    width: 100%;
+  }
+
+  p {
+    @extend p.rv-credit;
+  }
+
+}
+
+
+section.rv-graphic-splash {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+  
+  img {
+    width: 100%;
+  }
+}
+
+
+
+
+// full size image
+section.rv-graphic-splash {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px;
+  width: 100%;
+}
+
+// full sized video
+section.rv-graphic-splash video {
+  @extend .rv-graphic-splash;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+

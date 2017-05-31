@@ -1,0 +1,178 @@
+// container for everything
+.header {
+  position: fixed;
+  z-index: 3;
+  right: 0;
+  left: 0;
+  max-height: 59px;
+  top: 0;
+  position: relative;
+  z-index: 999;
+  font-size: 16px;
+}
+
+.header .logo {
+  background-image: url("images/reveal-logo.png");
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+  opacity: 0.9;
+  display: inline-block;
+  width: 244px;
+  height: 83px;
+  margin-top: -10px;
+  float: left;
+}
+
+// marker line
+.header .header-container {
+  background: black bottom repeat-x;
+  margin-left: 15.5em;
+  height: 3.6em;
+}
+
+// fuzzy edge
+.header-container:before {
+  background-image: url("images/header-bg-left.png");
+  background-repeat: no-repeat;
+  display: block;
+  background-size: 1.5em 3.74em;
+  width: 1.5em;
+  height: 4.5em;
+  content: "";
+  float: left;
+}
+
+.header .header-container .headline {
+  display: inline-block;
+  color: #fff;
+  float: left;
+}
+
+.header .header-container .headline h1 {
+  font-family: $rv-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 18px 0;
+  white-space: nowrap;
+  position: absolute;
+}
+
+// background
+#myModal {
+  background: rgba(0, 0, 0, .6);
+}
+
+.modal-content {
+  border-radius: 0;
+}
+
+#myModal>div.modal-dialog {
+  top: 20%;
+  position: absolute;
+  width: 50%;
+  margin: 0 auto;
+  left: 0px;
+  right: 0px;
+}
+
+.modal-header {
+  background: black;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $rv-nova;
+  .modal-title {
+    font-size: 1.5em;
+  }
+}
+
+.close {
+  text-shadow: 0;
+  opacity: 1;
+  color: white;
+
+  &:hover {
+    color: white;
+  }
+}
+
+#shareButton {
+  float: right;
+  color: #fff;
+  cursor: pointer;
+  font-family: $rv-nova; //border-right: 1px solid rgba(255, 255, 255, 0.4);
+  margin: 18px 10px 10px 0px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 400;
+
+  &:hover {
+    color: $link-color;
+    text-decoration: none;
+  }
+
+  .fa-share {
+    // iPad fix
+    @media screen and (max-device-width: 1024px) {
+      position: absolute;
+      top: 13px;
+      left: 87%;
+      right: 0;
+    }
+  } // very large screens
+  @media screen and (max-width: 1024px) {
+    margin: 11px 15px 0 0;
+  } // hide on small screens
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  .header,
+  .headline>h1 {
+    line-height: 6px;
+  }
+
+  .header .logo {
+    width: 190px;
+  }
+
+  .header .header-container {
+    margin-left: 195px;
+    height: 2.68182em;
+  }
+
+  .header .header-container:before {
+    height: 2.7em;
+    margin-left: 0px;
+  }
+}
+
+// small screens
+@media screen and (max-width: 500px) {
+  .header .header-container {
+    height: 40px;
+    margin-left: 50px;
+  }
+
+  .header .header-container:before {
+    height: 40px;
+  }
+
+  .header .logo {
+    background-image: url("images/reveal-square-logo.png");
+    margin-top: -5px;
+    margin-left: 0px;
+    width: 45px;
+  }
+
+  .headline>h1 {
+    line-height: 3px;
+  }
+}
+
+

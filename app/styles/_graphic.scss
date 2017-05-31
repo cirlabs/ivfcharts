@@ -1,0 +1,61 @@
+.rv-graphic {
+  border-top: 1px solid $rv-link;
+  border-bottom: 1px solid $rv-link;
+  display: block;
+  float: none;
+	// center
+  margin-left: auto;
+  margin-right: auto;
+	//inset 
+	max-width: 850px;
+	font-family: $rv-sans;
+	// set baseline for em
+	font-size: 16px;   
+	
+  p, h1, h2, h3, h4 {
+    padding: 0 10px;
+  }
+	
+	p {
+		font-family: $rv-serif;
+	}
+
+	h1 {
+		font-size: 2em;
+    font-weight:bold;
+    text-transform: uppercase;
+	}
+
+	h2 {
+		font-size: 1.8em;
+		font-weight: 400px;
+	}
+
+	p.rv-credit {
+		color: $rv-light-gray;
+		font-size: 0.8em;
+		text-align: right;
+		font-family: $rv-sans;
+		padding: 0 10px;
+		line-height: 0.4em;
+	  
+		@media screen and (max-width: $rv-small){
+    	text-align: left;
+  	}	
+	}	
+
+	.rv-note {
+		font-size: 0.8em;
+		line-height: 1.1em;
+		color: $rv-light-gray;
+	}
+
+	.rv-label {
+		font-size: 0.8em;
+		color: $off-white;
+		font-weight: normal;
+		font-family: $rv-sans;
+	}
+
+}
+

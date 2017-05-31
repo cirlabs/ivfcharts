@@ -1,0 +1,50 @@
+{
+  "name": "name-of-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/assets/index.html",
+  "dependencies": {
+    "d3": "^4.9.1",
+    "jquery": "^3.2.1",
+    "pubsub-js": "^1.5.6",
+    "topojson-client": "^3.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "babel-brunch": "^6.0.6",
+    "babel-core": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.11",
+    "browser-sync-webpack-plugin": "^1.1.4",
+    "chokidar-cli": "^1.2.0",
+    "javascript-brunch": "^2.0.0",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "scripts": {
+    "start": "run-p assets:dev css css:dev js:dev watch:vjs watch:vcss",
+    "prestart": "rm -rf public/* && npm run assets",
+    "watch:vjs": "chokidar 'app/scripts/vendor/**' -c 'npm run vendor:js' ",
+    "prewatch:vjs": "npm run vendor:js",
+    "watch:vcss": "chokidar 'app/styles/vendor/**' -c 'npm run vendor:css' ",
+    "prewatch:vcss": "npm run vendor:css",
+    "vendor:js": "cat app/scripts/vendor/** > public/vendor.js",
+    "vendor:css": "cat app/styles/vendor/** > public/vendor.css",
+    "js:dev": "webpack --watch --progress --colors",
+    "js:build": "webpack -p",
+    "assets:dev": "chokidar 'app/assets/**' -c 'npm run assets'",
+    "assets": "rsync -a app/assets/** public/",
+    "css:dev": "node-sass --source-map=true -w app/styles/main.scss public/app.css",
+    "css": "node-sass --source-map=true app/styles/main.scss public/app.css",
+    "css:build": "node-sass ssource-map=false app/styles/main.scss public/app.css",
+    "build": "run -s assets js:build css:build vendor:js vendor:css",
+    "push": "aws s3 sync public s3://apps-revealnews-org/$npm_package_name --exclude *.tmp --acl public-read",
+    "invalidate": "aws cloudfront create-invalidation --distribution-id E3ANDGTFXA0K7I --paths /$npm_package_name/* /$npm_package_name",
+    "deploy": "npm run build && npm run push && npm run invalidate"
+  },
+  "author": "",
+  "license": "ISC"
+}

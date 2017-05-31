@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- the properties are for facebook. twitter cards will also use og:title, og:description and og:image if you choose -->
+  <meta property="og:title" content="TITLE OF STORY FOR FACEBOOK AND TWITTER CARD" />
+  <meta property="og:image" content="https://www.revealnews.org/wp-content/themes/reveal2015/static/images/cir/reveal-logo.png" />
+  <meta property="og:description" content="" />
+  <meta name="description" content="A new pipeline pits Canada’s thirst for oil against its commitment to indigenous communities" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@reveal" />
+  <meta name="twitter:creator" content="@reveal" />
+  <meta name="twitter:image" content="https://www.revealnews.org/wp-content/themes/reveal2015/static/images/cir/reveal-logo.png" />
+  <link rel="icon" type="image/x-icon" href="https://www.revealnews.org/wp-content/themes/reveal2015/static/images/cir/favicon.ico" />
+
+  <!-- brunch compiles to this css file -->
+  <link rel="stylesheet" href="app.css">
+
+  <title>APP TITLE</title>
+
+  <script type="text/javascript">
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-2147301-25', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+</head>
+
+<body>
+
+  <!-- header -->
+  <header class="header">
+    <!-- logo -->
+    <a href="http://revealnews.org" class="logo" title="Visit RevealNews.org"></a>
+
+    <!-- container for headline article share -->
+    <div class="header-container">
+      <a class="headline" href="#">
+        <h1>NAME OF GRAPHIC/STORY</h1>
+      </a>
+
+      <a id="shareButton" class="share hidden-xs">
+        <i class="fa fa-share"></i> Share
+      </a>
+    </div>
+  </header>
+  <!-- /header -->
+
+  <div id="rv-title">
+    <h1>App Template</h1>
+  </div>
+
+  <div class="rv-subhead">
+    <h3>SUBHED</h3>
+    <p class="rv-byline">By <a href="https://www.revealnews.org/author/scottpham/" title="Bio and contact information for Scott Pham">Scott Pham</a> and <a href="http://www.revealnes.org/author/someoneelse" title="Bio and contact information for someone else">Someone Else</a> / March 31, 2017</p>
+  </div>
+
+
+  <!-- start a whole new graphic section here -->
+  <section class="rv-graphic">
+    <h1>Graphic block goes here</h1>
+    <div id="triplets" class="chart"></div>
+    <div id="twins" class="chart"></div>
+    <p class="rv-credit">Credit: people</p>
+    <p class="rv-credit">Sources: sources</p>
+
+    <!-- end graphic -->
+  </section>
+
+
+  <!-- restart article container anywhere -->
+  <section class="rv-article-body">
+    <p>Vivamus id convallis elit. Pellentesque id ullamcorper quam. Curabitur maximus vestibulum tellus, ac aliquet metus malesuada ac. Pellentesque fermentum dui magna, id eleifend ipsum vestibulum at. Praesent ultrices accumsan libero actincidunt.
+    </p>
+  </section>
+
+
+
+  <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <!-- the template compiles app/vendor/*.js to this -->
+  <script src="vendor.js"></script>
+
+  <!-- the template compiles app/scripts/*.js to this -->
+  <script src="app.js"></script>
+
+
+  <!-- START Parse.ly Include: Standard -->
+  <div id="parsely-root" style="display: none">
+    <div id="parsely-cfg" data-parsely-site="revealnews.org"></div>
+  </div>
+  <script>
+    (function(s, p, d) {
+      var h = d.location.protocol,
+        i = p + "-" + s,
+        e = d.getElementById(i),
+        r = d.getElementById(p + "-root"),
+        u = h === "https:" ? "d1z2jf7jlzjs58.cloudfront.net" : "static." + p + ".com";
+      if (e) return;
+      e = d.createElement(s);
+      e.id = i;
+      e.async = true;
+      e.src = h + "//" + u + "/p.js";
+      r.appendChild(e);
+    })("script", "parsely", document);
+  </script>
+
+  <!-- END Parse.ly Include -->
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    var WebFontConfig = {
+      google: {
+        families: ['Lato', ]
+      },
+      typekit: {
+        id: 'ack4lmg'
+      }
+    };
+
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-2147301-25', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  <div id="rv-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h4 class="modal-title" id="myModalLabel">Share this story</h4>
+      </div>
+      <div class="modal-body">
+        <div id="share-icons">
+          <a class="facebook-button" href="#"><i class="fa fa-facebook-square"></i></a>
+          <a class="twitter-button" href="#"><i class="fa fa-twitter-square"></i></a>
+          <a class="email-button" href="#" target="_top"><i class="fa fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
