@@ -3,15 +3,7 @@ window.d3 = d3;
 var data = require('./data.json');
 
 var parseTime = d3.timeParse("%Y");
-// coerce to num
 
-//const dataset = data.map(function(d, i) {
-//  d.year = parseTime(d.year);
-//  d.total = +(d.total);
-//  d.twin = +d.twin;
-//  d.triplet = +d.triplet;
-//  return d;
-//});
 
 const dataset = data;
 
@@ -86,7 +78,6 @@ var Chart = {
     // define y axis
     var yAxis = d3.axisLeft()
       .scale(this.yScale)
-      .tickFormat(d3.format(".2s"))
       .ticks(8);
 
     // apply y axis
@@ -159,7 +150,7 @@ var Chart = {
       .attr("x", -(this.height / 2))
       .attr('dy', '.75em')
       .attr('transform', 'rotate(-90)')
-      .text('Births');
+      .text('Births per 1000');
 
   },
   draw: function() {

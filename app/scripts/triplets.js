@@ -10,8 +10,12 @@ const dataset = data.map(function(d, i) {
   d.total = +(d.total);
   d.twin = +d.twin;
   d.triplet = +d.triplet;
+  d.rate_triplet = (d.triplet / d.total)*1000;
+  d.rate_twin = (d.twin / d.total)*1000;
   return d;
 });
+
+window.dataset = dataset;
 
 
 var Chart = {
@@ -150,7 +154,7 @@ var Chart = {
       .attr("x", -(this.height / 2))
       .attr('dy', '.75em')
       .attr('transform', 'rotate(-90)')
-      .text('Births');
+      .text('Births per 1000');
 
   },
   draw: function() {

@@ -23,14 +23,14 @@ var main = {
     const myChart = Triplets.create({
       el: "#triplets",
       xAccess: "year",
-      yAccess: "triplet"
+      yAccess: "rate_triplet"
     });
     myChart.draw();
     
     const twinChart = Twins.create({
       el: "#twins",
       xAccess: "year",
-      yAccess: "twin"
+      yAccess: "rate_twin"
     });
 
     twinChart.draw();
