@@ -1,6 +1,7 @@
 // load modules like so:
 var social = require('./social');
 const Triplets = require('./triplets.js');
+const Twins = require('./twins.js');
 window.Triplets = Triplets;
 
 // http://youmightnotneedjquery.com/ IE9+ loading
@@ -26,11 +27,13 @@ var main = {
     });
     myChart.draw();
     
-    const twinChart = Triplets.create({
+    const twinChart = Twins.create({
       el: "#twins",
       xAccess: "year",
       yAccess: "twin"
-    })
+    });
+
+    twinChart.draw();
   }
 };
 

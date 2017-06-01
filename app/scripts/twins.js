@@ -3,16 +3,17 @@ window.d3 = d3;
 var data = require('./data.json');
 
 var parseTime = d3.timeParse("%Y");
-
 // coerce to num
-const dataset = data.map(function(d, i) {
-  d.year = parseTime(d.year);
-  d.total = +(d.total);
-  d.twin = +d.twin;
-  d.triplet = +d.triplet;
-  return d;
-});
 
+//const dataset = data.map(function(d, i) {
+//  d.year = parseTime(d.year);
+//  d.total = +(d.total);
+//  d.twin = +d.twin;
+//  d.triplet = +d.triplet;
+//  return d;
+//});
+
+const dataset = data;
 
 var Chart = {
   // these defaults may be overridden by the create method
@@ -84,18 +85,20 @@ var Chart = {
 
     // define y axis
     var yAxis = d3.axisLeft()
-      .scale(this.yScale);
+      .scale(this.yScale)
+      .tickFormat(d3.format(".2s"))
+      .ticks(8);
 
     // apply y axis
     this.plot.append("g")
       .attr("transform", "translate(0, 0)")
-      .attr("class", "yaxis")
+      .attr("class", "yaxis twinsyaxis")
       .call(yAxis);
 
     // function to make grid lines
     function make_y_gridlines() {
       return d3.axisLeft(that.yScale)
-        .ticks();
+        .ticks(8);
     }
 
     this.plot.append("g")
@@ -104,6 +107,12 @@ var Chart = {
         .tickSize(-this.width)
         .tickFormat("")
       );
+
+    d3.select('.twinsyaxis')
+      .selectAll('text')
+      .attr("class", (d, i)=>{
+        console.log(d);
+      })
   },
   // make the svg
   drawPlot: function() {
