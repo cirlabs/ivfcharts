@@ -20,10 +20,17 @@ var main = {
   makeCharts: function(){
     console.log("making charts");
     const myChart = Triplets.create({
-      el: "#triplets"
+      el: "#triplets",
+      xAccess: "year",
+      yAccess: "triplet"
     });
     myChart.draw();
-    window.myChart = myChart;
+    
+    const twinChart = Triplets.create({
+      el: "#twins",
+      xAccess: "year",
+      yAccess: "twin"
+    })
   }
 };
 

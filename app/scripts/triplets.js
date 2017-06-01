@@ -1,7 +1,6 @@
 var d3 = require('d3');
 window.d3 = d3;
-var births = require('./data.json');
-window.births = births;
+var dataset = require('./data.json');
 
 var Chart = {
   // these defaults may be overridden by the create method
@@ -36,7 +35,7 @@ var Chart = {
 
     var parseTime = d3.timeParse("%Y");
     // coerce to num
-    births.forEach(function(d, i) {
+    dataset.forEach(function(d, i) {
       d.year = parseTime(d.year);
       d.total = +(d.total);
       d.twin = +d.twin;
@@ -47,23 +46,19 @@ var Chart = {
   },
   // CHART BUILDING
   createScales: function() {
+    const that = this;
     console.log("creating scales");
-    var that = this;
-
-    var extent = d3.extent(births, function(d) {
-      return d.triplet;
-    });
 
     // outflow
     this.yScale = d3.scaleLinear()
-      .domain([0, d3.max(births, function(d){ return d.triplet; })])
+      .domain([0, d3.max(dataset, function(d){ return d[that.yAccess]; })])
       .range([this.height, 0])
       .nice();
 
 
     // date
     this.xScale = d3.scaleTime()
-      .domain(d3.extent(births, function(d) { return d.year; }))
+      .domain(d3.extent(dataset, function(d) { return d[that.xAccess]; }))
       .range([0, this.width]);
 
   },
@@ -126,13 +121,13 @@ var Chart = {
     var that = this;
 
     var line = d3.line()
-      .x(function(d) { return that.xScale(d.year); })
+      .x(function(d) { return that.xScale(d[that.xAccess]); })
       .y(function(d) {
-        return that.yScale(d.triplet);
+        return that.yScale(d[that.yAccess]);
       });
 
     this.plot.append('path')
-      .datum(births)
+      .datum(dataset)
       .attr("fill", "none")
       .attr("stroke-linecap", "round")
       //.style('stroke', "orange")
